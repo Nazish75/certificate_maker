@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CertificateMaker — Professional Certificate Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section id="loginGate" class="login-gate">
+    <div class="login-card">
+      <div class="brand-mark">CM</div>
+      <h1>CertificateMaker</h1>
+      <p class="login-subtitle">Create professional certificates in minutes.</p>
+
+      <form id="loginForm">
+        <label for="gateEmail">Email</label>
+        <input id="gateEmail" type="email" placeholder="you@example.com" required>
+
+        <label for="gatePassword">Password</label>
+        <input id="gatePassword" type="password" placeholder="Enter your password" required>
+
+        <button id="gateLoginBtn" class="primary-btn full-btn" type="submit">Login</button>
+        <button id="gateSignupBtn" class="secondary-btn full-btn" type="button">Create Account</button>
+
+        <div id="gateMessage" class="message"></div>
+      </form>
+
+      <p class="small-note">Your certificates are saved securely to your account.</p>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <div id="appShell" class="app-shell">
+
+    <header class="navbar">
+      <a href="#home" class="logo">CertificateMaker</a>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#creator">Create Certificate</a>
+        <a href="#saved">My Certificates</a>
+      </nav>
+
+      <div class="account-area">
+        <span id="userEmail"></span>
+        <button id="logoutBtn" class="logout-btn" type="button">Logout</button>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- HOME -->
+      <section id="home" class="hero section">
+        <div class="hero-content">
+          <span class="eyebrow">PROFESSIONAL CERTIFICATES</span>
+          <h2>Create certificates that look like real course completion awards.</h2>
+          <p>Choose a design, enter the recipient and course details, preview the certificate, save it to Supabase, and download it as a PDF.</p>
+          <a href="#creator" class="primary-btn hero-btn">Create Certificate</a>
+        </div>
+
+        <div class="hero-card">
+          <div class="mini-certificate">
+            <span>CERTIFICATE OF COMPLETION</span>
+            <h3>Certificate</h3>
+            <p>This certificate is proudly presented to</p>
+            <strong>Alex Johnson</strong>
+            <div class="mini-line"></div>
+            <b>Web Development Course</b>
+            <small>Successfully completed the required course.</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features" class="section">
+        <div class="section-heading">
+          <span class="eyebrow">FEATURES</span>
+          <h2>Everything you need</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">✦</div>
+            <h3>Multiple Designs</h3>
+            <p>Choose from professional certificate templates with different styles.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">✓</div>
+            <h3>Live Preview</h3>
+            <p>See your certificate design update while you enter the information.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">▣</div>
+            <h3>Supabase Storage</h3>
+            <p>Your saved certificates are connected to your authenticated account.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">↓</div>
+            <h3>PDF Download</h3>
+            <p>Download the finished certificate as a printable PDF.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CREATOR -->
+      <section id="creator" class="section creator-section">
+        <div class="section-heading">
+          <span class="eyebrow">CERTIFICATE CREATOR</span>
+          <h2>Create your certificate</h2>
+          <p>Fill in the details and choose a template.</p>
+        </div>
+
+        <div class="creator-layout">
+
+          <div class="form-panel">
+            <h3>Certificate Details</h3>
+
+            <label for="recipient">Recipient Name *</label>
+            <input id="recipient" type="text" placeholder="e.g. Sarah Khan">
+
+            <label for="achievement">Course / Achievement *</label>
+            <input id="achievement" type="text" placeholder="e.g. Web Development Course">
+
+            <label for="description">Description</label>
+            <textarea id="description" rows="4" placeholder="Successfully completed the required course and demonstrated the required skills."></textarea>
+
+            <label for="date">Completion Date</label>
+            <input id="date" type="date">
+
+            <label for="instructor">Instructor</label>
+            <input id="instructor" type="text" placeholder="e.g. Muhammad Ali">
+
+            <label for="organization">Organization</label>
+            <input id="organization" type="text" placeholder="e.g. CertificateMaker Academy">
+
+            <h3 class="template-title">Choose a Template</h3>
+
+            <div class="templates" id="templates">
+              <button class="template-choice active" type="button" data-template="classic" aria-pressed="true">
+                <span class="template-swatch classic-swatch"></span>
+                Classic Gold
+              </button>
+
+              <button class="template-choice" type="button" data-template="modern" aria-pressed="false">
+                <span class="template-swatch modern-swatch"></span>
+                Modern Blue
+              </button>
+
+              <button class="template-choice" type="button" data-template="elegant" aria-pressed="false">
+                <span class="template-swatch elegant-swatch"></span>
+                Elegant Purple
+              </button>
+
+              <button class="template-choice" type="button" data-template="minimal" aria-pressed="false">
+                <span class="template-swatch minimal-swatch"></span>
+                Minimal Green
+              </button>
+
+              <button class="template-choice" type="button" data-template="executive" aria-pressed="false">
+                <span class="template-swatch executive-swatch"></span>
+                Executive Black
+              </button>
+
+              <button class="template-choice" type="button" data-template="academic" aria-pressed="false">
+                <span class="template-swatch academic-swatch"></span>
+                Academic
+              </button>
+
+              <button class="template-choice" type="button" data-template="royal" aria-pressed="false">
+                <span class="template-swatch royal-swatch"></span>
+                Royal
+              </button>
+
+              <button class="template-choice" type="button" data-template="corporate" aria-pressed="false">
+                <span class="template-swatch corporate-swatch"></span>
+                Corporate
+              </button>
+            </div>
+
+            <div class="action-row">
+              <button id="saveBtn" class="primary-btn" type="button">Save Draft</button>
+              <button id="downloadBtn" class="secondary-btn" type="button">Download PDF</button>
+              <button id="newBtn" class="ghost-btn" type="button">New</button>
+            </div>
+
+            <div id="creatorMessage" class="creator-message"></div>
+          </div>
+
+          <div class="preview-panel">
+            <div class="preview-top">
+              <h3>Live Preview</h3>
+              <span>Certificate</span>
+            </div>
+
+            <div id="certificate" class="certificate classic">
+              <div class="certificate-border">
+                <div class="certificate-content">
+                  <div class="certificate-small">CERTIFICATE OF COMPLETION</div>
+                  <h2>Certificate</h2>
+                  <p class="certificate-label">This certificate is proudly presented to</p>
+                  <div id="previewRecipient" class="certificate-recipient">Recipient Name</div>
+                  <div class="certificate-line"></div>
+                  <div id="previewAchievement" class="certificate-achievement">Course Completion</div>
+                  <p id="previewDescription" class="certificate-description">Successfully completed the required course and demonstrated the required skills.</p>
+
+                  <div class="certificate-details">
+                    <div>
+                      <span>Date</span>
+                      <strong id="previewDate">Date</strong>
+                    </div>
+                    <div>
+                      <span>Instructor</span>
+                      <strong id="previewInstructor">Instructor</strong>
+                    </div>
+                    <div>
+                      <span>Organization</span>
+                      <strong id="previewOrganization">Organization</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SAVED -->
+      <section id="saved" class="section saved-section">
+        <div class="section-heading">
+          <span class="eyebrow">MY CERTIFICATES</span>
+          <h2>Your saved certificates</h2>
+          <p>Certificates saved to your Supabase account appear here.</p>
+        </div>
+
+        <div id="savedList" class="saved-list">
+          <div class="empty-state">
+            <h3>No certificates yet</h3>
+            <p>Create and save your first certificate.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <strong>CertificateMaker</strong>
+      <span>Professional certificate creation platform</span>
+    </footer>
+
+  </div>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- PDF Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
